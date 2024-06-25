@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Main Page</h1>
+
+{% if id %}
+    <h1>Image ID: {{ id }}</h1>
+    <h3>Image:</h3>
+    {% if image %}
+        <img src="{{ image.url }}" alt="{{ image_name }}" style="max-width: 20%;">
+    {% else %}
+        <p>No image file associated with this ID.</p>
+    {% endif %}
+    <h2>Predicted Class: {{ predicted_class }}</h2> <!-- Display predicted class -->
+    <p>Image Name: {{ image_name }}</p>
+    <p>Uploaded at: {{ uploaded_at }}</p>
+{% endif %}
+
+<h2>All Images</h2>
+<ul>
+    {% for x in object_list %}
+        <li>
+            <a href='/image_upload/{{ x.id }}/'>
+                {% if x.image %}
+                    {{ x.id }} - <img src="{{ x.image.url }}" alt="{{ x.image_name }}" style="max-width: 50px;"> {{ x.image_name }} {{ x.predicted_class }} {{ x.uploaded_at }}
+                {% else %}
+                    {{ x.id }} - No image available
+                {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

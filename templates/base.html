@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <title> Fresh Eats </title>
+        <style type="text/css">
+            .form-style-3{
+                max-width: 450px;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            }
+            .form-style-3 label{
+                display:block;
+                margin-bottom: 10px;
+            }
+            .form-style-3 label > span{
+                float: left;
+                width: 100px;
+                color: #F072A9;
+                font-weight: bold;
+                font-size: 13px;
+                text-shadow: 1px 1px 1px #fff;
+            }
+            .form-style-3 fieldset{
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                margin: 0px 0px 10px 0px;
+                border: 1px solid #FFD2D2;
+                padding: 20px;
+                background: #FFF4F4;
+                box-shadow: inset 0px 0px 15px #FFE5E5;
+                -moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+                -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+            }
+            .form-style-3 fieldset legend{
+                color: #FFA0C9;
+                border-top: 1px solid #FFD2D2;
+                border-left: 1px solid #FFD2D2;
+                border-right: 1px solid #FFD2D2;
+                border-radius: 5px 5px 0px 0px;
+                -webkit-border-radius: 5px 5px 0px 0px;
+                -moz-border-radius: 5px 5px 0px 0px;
+                background: #FFF4F4;
+                padding: 0px 8px 3px 8px;
+                box-shadow: -0px -1px 2px #F1F1F1;
+                -moz-box-shadow:-0px -1px 2px #F1F1F1;
+                -webkit-box-shadow:-0px -1px 2px #F1F1F1;
+                font-weight: normal;
+                font-size: 12px;
+            }
+            .form-style-3 textarea{
+                width:250px;
+                height:100px;
+            }
+            .form-style-3 input[type=text],
+            .form-style-3 input[type=date],
+            .form-style-3 input[type=datetime],
+            .form-style-3 input[type=number],
+            .form-style-3 input[type=search],
+            .form-style-3 input[type=time],
+            .form-style-3 input[type=url],
+            .form-style-3 input[type=email],
+            .form-style-3 select, 
+            .form-style-3 textarea{
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border: 1px solid #FFC2DC;
+                outline: none;
+                color: #F072A9;
+                padding: 5px 8px 5px 8px;
+                box-shadow: inset 1px 1px 4px #FFD5E7;
+                -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+                -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+                background: #FFEFF6;
+                width:50%;
+            }
+            .form-style-3  input[type=submit],
+            .form-style-3  input[type=button]{
+                background: #EB3B88;
+                border: 1px solid #C94A81;
+                padding: 5px 15px 5px 15px;
+                color: #FFCBE2;
+                box-shadow: inset -1px -1px 3px #FF62A7;
+                -moz-box-shadow: inset -1px -1px 3px #FF62A7;
+                -webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+                border-radius: 3px;
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;	
+                font-weight: bold;
+            }
+            .required{
+                color:red;
+                font-weight:normal;
+            }
+
+
+            {% comment %} navbar css {% endcomment %}
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+              }
+              
+              .topnav {
+                overflow: hidden;
+                background-color: #333;
+              }
+              
+              .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+              }
+              
+              .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+              }
+              
+              .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+              }
+
+              
+              {% comment %} Login page css {% endcomment %}
+              :root {
+                --background: #1a1a2e;
+                --color: #ffffff;
+                --primary-color: #0f3460;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+            
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            body {
+                margin: 0;
+                box-sizing: border-box;
+                font-family: "poppins";
+                background: var(--background);
+                color: var(--color);
+                letter-spacing: 1px;
+                transition: background 0.2s ease;
+                -webkit-transition: background 0.2s ease;
+                -moz-transition: background 0.2s ease;
+                -ms-transition: background 0.2s ease;
+                -o-transition: background 0.2s ease;
+            }
+            
+            a {
+                text-decoration: none;
+                color: var(--color);
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            
+            .login-container {
+                position: relative;
+                width: 22.2rem;
+            }
+            .form-container {
+                border: 1px solid hsla(0, 0%, 65%, 0.158);
+                box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                backdrop-filter: blur(20px);
+                z-index: 99;
+                padding: 2rem;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+            
+            .login-container form input {
+                display: block;
+                padding: 14.5px;
+                width: 100%;
+                margin: 2rem 0;
+                color: var(--color);
+                outline: none;
+                background-color: #9191911f;
+                border: none;
+                border-radius: 5px;
+                font-weight: 500;
+                letter-spacing: 0.8px;
+                font-size: 15px;
+                backdrop-filter: blur(15px);
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+            }
+            
+            .login-container form input:focus {
+                box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+                animation: wobble 0.3s ease-in;
+                -webkit-animation: wobble 0.3s ease-in;
+            }
+            
+            .login-container form button {
+                background-color: var(--primary-color);
+                color: var(--color);
+                display: block;
+                padding: 13px;
+                border-radius: 5px;
+                outline: none;
+                font-size: 18px;
+                letter-spacing: 1.5px;
+                font-weight: bold;
+                width: 100%;
+                cursor: pointer;
+                margin-bottom: 2rem;
+                transition: all 0.1s ease-in-out;
+                border: none;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                -webkit-transition: all 0.1s ease-in-out;
+                -moz-transition: all 0.1s ease-in-out;
+                -ms-transition: all 0.1s ease-in-out;
+                -o-transition: all 0.1s ease-in-out;
+            }
+            
+            .login-container form button:hover {
+                box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+                transform: scale(1.02);
+                -webkit-transform: scale(1.02);
+                -moz-transform: scale(1.02);
+                -ms-transform: scale(1.02);
+                -o-transform: scale(1.02);
+            }
+            
+            .circle {
+                width: 8rem;
+                height: 8rem;
+                background: var(--primary-color);
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                position: absolute;
+            }
+            
+            .illustration {
+                position: absolute;
+                top: -14%;
+                right: -2px;
+                width: 90%;
+            }
+            
+            .circle-one {
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transform: translate(-45%, -45%);
+                -webkit-transform: translate(-45%, -45%);
+                -moz-transform: translate(-45%, -45%);
+                -ms-transform: translate(-45%, -45%);
+                -o-transform: translate(-45%, -45%);
+            }
+            
+            .circle-two {
+                bottom: 0;
+                right: 0;
+                z-index: -1;
+                transform: translate(45%, 45%);
+                -webkit-transform: translate(45%, 45%);
+                -moz-transform: translate(45%, 45%);
+                -ms-transform: translate(45%, 45%);
+                -o-transform: translate(45%, 45%);
+            }
+            
+            .register-forget {
+                margin: 1rem 0;
+                display: flex;
+                justify-content: space-between;
+            }
+            .opacity {
+                opacity: 0.6;
+            }
+            
+            .theme-btn-container {
+                position: absolute;
+                left: 0;
+                bottom: 2rem;
+            }
+            
+            .theme-btn {
+                cursor: pointer;
+                transition: all 0.3s ease-in;
+            }
+            
+            .theme-btn:hover {
+                width: 40px !important;
+            }
+            
+            @keyframes wobble {
+                0% {
+                    transform: scale(1.025);
+                    -webkit-transform: scale(1.025);
+                    -moz-transform: scale(1.025);
+                    -ms-transform: scale(1.025);
+                    -o-transform: scale(1.025);
+                }
+                25% {
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                }
+                75% {
+                    transform: scale(1.025);
+                    -webkit-transform: scale(1.025);
+                    -moz-transform: scale(1.025);
+                    -ms-transform: scale(1.025);
+                    -o-transform: scale(1.025);
+                }
+                100% {
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                }
+            }
+
+
+            {% comment %} registet page style {% endcomment %}
+
+            @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;	
+                font-family: Raleway, sans-serif;
+            }
+
+            body {
+                background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .screen {		
+                background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+                position: relative;	
+                height: 600px;
+                width: 360px;	
+                box-shadow: 0px 0px 24px #5C5696;
+            }
+
+            .screen__content {
+                z-index: 1;
+                position: relative;	
+                height: 100%;
+            }
+
+            .screen__background {		
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 0;
+                -webkit-clip-path: inset(0 0 0 0);
+                clip-path: inset(0 0 0 0);	
+            }
+
+            .screen__background__shape {
+                transform: rotate(45deg);
+                position: absolute;
+            }
+
+            .screen__background__shape1 {
+                height: 520px;
+                width: 520px;
+                background: #FFF;	
+                top: -50px;
+                right: 120px;	
+                border-radius: 0 72px 0 0;
+            }
+
+            .screen__background__shape2 {
+                height: 220px;
+                width: 220px;
+                background: #6C63AC;	
+                top: -172px;
+                right: 0;	
+                border-radius: 32px;
+            }
+
+            .screen__background__shape3 {
+                height: 540px;
+                width: 190px;
+                background: linear-gradient(270deg, #5D54A4, #6A679E);
+                top: -24px;
+                right: 0;	
+                border-radius: 32px;
+            }
+
+            .screen__background__shape4 {
+                height: 400px;
+                width: 200px;
+                background: #7E7BB9;	
+                top: 420px;
+                right: 50px;	
+                border-radius: 60px;
+            }
+
+            .login {
+                width: 320px;
+                padding: 30px;
+                padding-top: 156px;
+            }
+
+            .login__field {
+                padding: 20px 0px;	
+                position: relative;	
+            }
+
+            .login__icon {
+                position: absolute;
+                top: 30px;
+                color: #7875B5;
+            }
+
+            .login__input {
+                border: none;
+                border-bottom: 2px solid #D1D1D4;
+                background: none;
+                padding: 10px;
+                padding-left: 24px;
+                font-weight: 700;
+                width: 75%;
+                transition: .2s;
+            }
+
+            .login__input:active,
+            .login__input:focus,
+            .login__input:hover {
+                outline: none;
+                border-bottom-color: #6A679E;
+            }
+
+            .login__submit {
+                background: #fff;
+                font-size: 14px;
+                margin-top: 30px;
+                padding: 16px 20px;
+                border-radius: 26px;
+                border: 1px solid #D4D3E8;
+                text-transform: uppercase;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                color: #4C489D;
+                box-shadow: 0px 2px 2px #5C5696;
+                cursor: pointer;
+                transition: .2s;
+            }
+
+            .login__submit:active,
+            .login__submit:focus,
+            .login__submit:hover {
+                border-color: #6A679E;
+                outline: none;
+            }
+
+            .button__icon {
+                font-size: 24px;
+                margin-left: auto;
+                color: #7875B5;
+            }
+
+            .social-login {	
+                position: absolute;
+                height: 140px;
+                width: 160px;
+                text-align: center;
+                bottom: 0px;
+                right: 0px;
+                color: #fff;
+            }
+
+            .social-icons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .social-login__icon {
+                padding: 20px 10px;
+                color: #fff;
+                text-decoration: none;	
+                text-shadow: 0px 0px 8px #7875B5;
+            }
+
+            .social-login__icon:hover {
+                transform: scale(1.5);	
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="topnav">
+            <a href="http://127.0.0.1:7000/">User ID: {{ user.username }}</a>
+            <a class="active" href="http://127.0.0.1:7000/">base</a>
+            <a href="http://127.0.0.1:7000/login/">login</a>
+            <a href="http://127.0.0.1:7000/logout/">logout</a>
+            <a href="http://127.0.0.1:7000/register/">register</a>
+            <a href="http://127.0.0.1:7000/image_upload/upload_image/">Upload Image</a>
+            <a href="http://127.0.0.1:7000/admin/">admin</a>
+
+        </div>
+
+        <form>
+            <input type='text' />
+            <input type='submit' />
+
+        </form>
+
+
+        
+        {% block content %}
+        {% endblock content %}
+        
+    </body>
+</html>
