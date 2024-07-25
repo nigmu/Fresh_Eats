@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Recipe Details</h1>
+  
+  {% if recipe_details %}
+    <h2>{{ recipe_details.recipe }}</h2>
+    <p><strong>Ingredients:</strong>
+    <ul>
+      {% for step in ingredients %}
+        <li>{{ step }}</li>
+      {% endfor %}
+    </ul>
+
+
+    <p><strong>Directions:</strong></p>
+    <ul>
+      {% for step in directions %}
+        <li>{{ step }}</li>
+      {% endfor %}
+    </ul>
+    <p><strong>URL:</strong> <a href="{{ external_url }}" target="_blank">Link</a></p>
+  {% else %}
+    <p>No recipe details available.</p>
+  {% endif %}
+  
+  
+{% endblock content %}

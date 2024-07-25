@@ -1,0 +1,3 @@
+docker build --tag fresh_eats_prod_container_docker .
+
+docker run --publish 8000:8000 fresh_eats_prod_container_docker

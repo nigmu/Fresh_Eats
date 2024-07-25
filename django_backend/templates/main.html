@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-main-page">
+    <div class="title">Items Information</div>
+    <div class="table-container">
+        <div class="table-scroll">
+            <div class="row header">
+                <div class="column">Name</div>
+                <div class="column">Description</div>
+                <div class="column">Uploaded At</div>
+            </div>
+            {% for x in object_list %}
+                <div class="row">
+                    <div class="column"><a href="{% url 'image_detail' x.id %}">{{ x.image_name }}</a></div>
+                    <div class="column">{{ x.description }}</div>
+                    <div class="column">{{ x.uploaded_at }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <br><br><br>
+    <div class="title">Recipes You Can Make</div>
+    <div class="section">
+        <div class="recipes">
+            <ul>
+                {% for recommendation in recommendations.itertuples %}
+                <li>
+                    <h3><a href="{% url 'recipe_detail' recommendation.recipe %}">{{ recommendation.recipe }}</a></h3>
+                    <p>{{ recommendation.ingredients }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+

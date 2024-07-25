@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Recipe Recommendations</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Serial No.</th>
+            <th>Score</th>\
+            <th>Ingredients</th>
+            <th>Directions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recommendation in recommendations.itertuples %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            {% comment %} <td>{{ recommendation.score }}</td> {% endcomment %}
+            <td>{{ recommendation.recipe }}</td>
+            <td>{{ recommendation.ingredients }}</td>
+            <td>{{ recommendation.directions }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

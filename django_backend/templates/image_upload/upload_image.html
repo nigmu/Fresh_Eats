@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="title">Upload a New Image</div>
+    <form method="POST" enctype="multipart/form-data" style="text-align: center;">
+        {% csrf_token %}
+        <div class="form-group" style="margin: 0 auto; max-width: 300px;">
+            <label for="id_image">Image:</label><br>
+            {{ form.image }}
+        </div>
+        <div class="form-group" style="margin: 0 auto; max-width: 300px;">
+            <label for="id_image_name">Image name:</label><br>
+            {{ form.image_name }}
+        </div>
+        <div class="form-group" style="margin: 0 auto; max-width: 300px;">
+            <label for="id_description">Description:</label><br>
+            {{ form.description }}
+        </div>
+        <button type="submit" style="margin-top: 20px;">Upload</button>
+    </form>
+</div>
+{% endblock content %}
