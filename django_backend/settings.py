@@ -166,6 +166,6 @@ STATICFILES_DIRS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://fresh-eats.onrender.com',
+    'https://fresh-eats-h28q.onrender.com',
     # Add any other domains here if needed
 ]
