@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-_xivf7^7fu+_^a4c)$yv+#j*4%@c6imd1mrk$244ddq2issvn2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".onrender.com", "127.0.0.1"]
 
 
 # Application definition
@@ -165,3 +165,7 @@ STATICFILES_DIRS = [
 
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://fresh-eats.onrender.com',
+    # Add any other domains here if needed
+]

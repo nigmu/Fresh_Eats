@@ -1,3 +1,11 @@
+follow these steps for docker run:
+
+
+
 docker build --tag fresh_eats_prod_container_docker .
 
 docker run --publish 8000:8000 fresh_eats_prod_container_docker
+
+docker name change before push: docker tag fresh_eats_prod_container_docker nigmu/fresh_eats:latest
+
+docker push: docker push nigmu/fresh_eats:latest

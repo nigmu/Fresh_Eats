@@ -300,22 +300,23 @@
 
 <nav>
     <div class="nav-left">
-        <a href="http://127.0.0.1:8000/">Home</a>
-        <a href="http://127.0.0.1:8000/image_upload/upload_image/">Upload Image</a>
-        {% comment %} <a href="http://127.0.0.1:8000/recommend/">Recipes</a> {% endcomment %}
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'upload_image' %}">Upload Image</a>
+        {% comment %} <a href="{% url 'recipe_recommendation' %}">Recipes</a> {% endcomment %}
     </div>
     <div class="nav-right">
         <div class="user-avatar">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="User Avatar" style="width: 30px; height: 30px;">
-
+    
             <span>{{ user.username }}</span>
         </div>
         <div class="user-menu">
-            <a href="http://127.0.0.1:8000/login/">Login</a>
-            <a href="http://127.0.0.1:8000/logout/">Logout</a>
-            <a href="http://127.0.0.1:8000/register/">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'register' %}">Register</a>
         </div>
     </div>
+    
 </nav>
 
 {% block content %}

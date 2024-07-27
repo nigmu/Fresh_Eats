@@ -40,7 +40,7 @@ from recipe_recommendation_app.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', home_view),
+    path('', home_view, name='home'),
 
     #image upload and recognition
     path("image_upload/upload_image/", upload_image_view, name="upload_image"),
