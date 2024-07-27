@@ -11,6 +11,7 @@
         <p><strong>Image Name:</strong> {{ object.image_name }}</p>
         <p><strong>Uploaded At:</strong> {{ object.uploaded_at }}</p>
         <p><strong>Predicted Class:</strong> {{ object.predicted_class }}</p>
+        <p><strong>Rot Status:</strong> {{ rot_status }}</p>
     </div>
     <div class="actions">
         <a href="{% url 'image_update' object.id %}" class="btn">Edit</a>

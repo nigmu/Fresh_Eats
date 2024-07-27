@@ -9,12 +9,20 @@
                 <div class="column">Name</div>
                 <div class="column">Description</div>
                 <div class="column">Uploaded At</div>
+                <div class="column">Freshness Status</div>
             </div>
             {% for x in object_list %}
                 <div class="row">
                     <div class="column"><a href="{% url 'image_detail' x.id %}">{{ x.image_name }}</a></div>
                     <div class="column">{{ x.description }}</div>
                     <div class="column">{{ x.uploaded_at }}</div>
+                    {% comment %} <div class="column" style="background-color: {% if x.rot_value == 'good' %}green{% elif x.rot_value == 'moderate' %}yellow{% elif x.rot_value == 'going_bad' %}orange{% else %}red{% endif %}; color: white;">
+                        {{ x.rot_value }}
+                    </div> {% endcomment %}
+                    <div class="column status {{ x.rot_value|lower }}">
+                        {{ x.rot_value }}
+                    </div>
+                    
                 </div>
             {% endfor %}
         </div>

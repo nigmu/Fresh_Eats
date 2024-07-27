@@ -272,6 +272,33 @@
             border-radius: 50%;
             margin-right: 10px;
         }
+
+        /* Status column styling */
+.status {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Status colors */
+.status.good {
+    background-color: #28a745; /* Green */
+}
+
+.status.moderate {
+    background-color: #ffc107; /* Yellow */
+    color: #000; /* Black text on yellow background */
+}
+
+.status.getting_bad {
+    background-color: #fd7e14; /* Orange */
+}
+
+.status.expired {
+    background-color: #dc3545; /* Red */
+}
         
     </style>
 
